@@ -34,7 +34,7 @@ if __name__ == "__main__":
     if args.gpus > 1:
         if args.data.lower() != 'imagenet':
             AssertionError('Only ImageNet using multiprocessing.')
-        mp.spawn(main_worker, nprocs=args.gpus, args=(args.gpus, args))
+        mp.spawn(main_worker, nprocs=args.gpus, args=(args.gpus, args)) # ?
     else:
         # preparing data
         train, test = datapool(args.data, args.bs)
